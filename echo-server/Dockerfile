@@ -6,4 +6,4 @@ RUN cargo build --release
 
 FROM alpine
 COPY --from=builder /usr/src/app/target/release/echo-server /usr/local/bin/echo-server
-CMD ["echo-server"]
+CMD ["echo-server", "/app/config.json"]
